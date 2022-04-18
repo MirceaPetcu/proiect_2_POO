@@ -74,6 +74,7 @@ protected:
     double bani;
     string nr_card;
     string nume_detinator;
+private:
     static int incercari;
 
 
@@ -211,10 +212,12 @@ double Card_Standard::retragere(int cod,double suma) {
         if (suma < bani) {
             if (suma < limita_extragere) {
                 bani -= suma;
+                cout<<"\nAti retras: "<<suma<<" ron.\n";
                 return suma;
             } else {
                 bani -= (suma + suma * comision_depasire_limita);
                 suma -= suma * comision_depasire_limita;
+                cout<<"\nAti retras: "<<suma<<" ron. Deorarece s-a aplicaat comisionul de depasire de "<<comision_depasire_limita<<" din suma ceruta.\n";
                 return suma;
             }
         } else {
@@ -355,6 +358,7 @@ double Card_Premium::retragere(int cod,double suma){
             } else {
                 cout << "\nAti depasit limita de extragere.\n";
                 bani -= (suma + suma * comision_depasire_premium);
+                cout<<"\nAti retras: "<<((suma - suma * comision_depasire_premium  ) + (suma - suma * comision_depasire_premium  )*cashback)<<" ron.\n";
                 return ((suma - suma * comision_depasire_premium  ) + (suma - suma * comision_depasire_premium  )*cashback);
             }
         }
@@ -406,6 +410,7 @@ int main()
 
     int comanda;bool meniu = true;
     while (meniu) {
+        citire_comanda:
         cout << "Apasati 0 pentru a iesi din program.\n";
         cout << "Apasati 1 pentru a va crea cardul standard.\n";
         cout<<"Apasati 2 pentru constructori si operatori.\n";
@@ -413,7 +418,7 @@ int main()
 
 
 
-        citire_comanda:
+
         cin >> comanda;
         try {
             if (comanda > 4)
@@ -453,7 +458,7 @@ int main()
 
             }
             if (subcomanda_css == 0)
-                break;
+                goto citire_comanda;
             else if (subcomanda_css == 1) {
                 cout << "Introduceti codul de deblocare a cardului si suma pe care vreti sa o retrageti.\n";
                 cin >> cod >> suma;
@@ -495,6 +500,7 @@ int main()
                 }
                 switch (csp_sub) {
                     case 0:
+                        goto citire_comanda;
                         break;
                     case 1: {
                         cout << "Introduceti codul de deblocare a cardului si suma pe care vreti sa o retrageti.\n";
@@ -549,6 +555,7 @@ int main()
             cin>>cons_sub;
             switch (cons_sub) {
                 case 0: {
+                    goto citire_comanda;
                     break;
                 }
                 case 1:
