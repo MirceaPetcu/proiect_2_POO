@@ -29,3 +29,33 @@ card standard doar ca scrie frumos, cu majuscule PREMIUM sus:).
   Mai exista si functiile get_cashback_premium(returneaza cashbackul) si standard_cashback_standard(returneaza -1) ce ne ajuta la casting din vectorul de carduri de la 
 subpunctul 3 din meniul principal. Pentru supraincarcarea operatorului de citire am facut casting. Pentru card premium nu este nevoie sa cititi si datele clasei de card
 standard.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Exemplu citire Card_Standard:
+Raiffeisen
+805
+12000.4
+05/25
+03472823
+ionesculescu
+3500
+0.04
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Exemplu citire Card:
+Raiffeisen
+805
+12000.4
+05/25
+03472823
+ionesculescu
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Exemplu citire Card_Premium:
+Raiffeisen
+805
+20000.4
+05/25
+03472823
+ionesculescu
+0.01
+8000
+0.02
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
