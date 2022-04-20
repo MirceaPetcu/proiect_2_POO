@@ -27,10 +27,9 @@ si o suma de imprumutat. Odata autentificat, se verifica daca imprumutul nu este
 de card standard nu mai este nevoie sa ai bani in cont. Daca suma depaseste 40000 de ron se ofera 39999 ron. Functia de autentificare se aseamana foarte mult cu cea de 
 card standard doar ca scrie frumos, cu majuscule PREMIUM sus:).
   Mai exista si functiile get_cashback_premium(returneaza cashbackul) si standard_cashback_standard(returneaza -1) ce ne ajuta la casting din vectorul de carduri de la 
-subpunctul 3 din meniul principal. Pentru supraincarcarea operatorului de citire am facut casting. Pentru card premium nu este nevoie sa cititi si datele clasei de card
-standard.
+subpunctul 3 din meniul principal. Pentru supraincarcarea operatorului de citire am facut casting. Pentru card premium nu este nevoie sa cititi si datele clasei de card standard. La crearea vectorului de carduri am declarat vectorul ca fiind de tipul Card si fiind de pointeri ca mai apoi sa fac upcasting si downcasting. La punctul 2 din meniu se pot observa toti constructorii si operatorii de la toate clasele inafara de banca.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Exemplu citire Card_Standard:
+Exemplu citire Card_Standard:<br />
 Raiffeisen<br />
 805<br />
 12000.4<br />
@@ -40,7 +39,7 @@ ionesculescu<br />
 3500<br />
 0.04<br />
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Exemplu citire Card:
+Exemplu citire Card:<br />
 Raiffeisen<br />
 805<br />
 12000.4<br />
@@ -48,7 +47,7 @@ Raiffeisen<br />
 03472823<br />
 ionesculescu<br />
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Exemplu citire Card_Premium:
+Exemplu citire Card_Premium:<br />
 Raiffeisen<br />
 805<br />
 20000.4<br />
@@ -59,4 +58,4 @@ ionesculescu<br />
 8000<br />
 0.02<br />
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Programul a fost scris in Clion si se poate rula si in terminal.
+  Programul a fost scris in Clion si se poate rula si in terminal. (Compilator MinGW, g++)
